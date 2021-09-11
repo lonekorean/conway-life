@@ -32,3 +32,11 @@ body {
 .board div div[data-is-alive] {
   opacity: 1;
 }
+
+button[disabled] {
+  display: none;
+}
+
+svg {
+  width: 30px;
+}
