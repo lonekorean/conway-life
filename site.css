@@ -1,0 +1,34 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+
+.board {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.board div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.board div div {
+  width: 20px;
+  height: 20px;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: #FE4365;
+  opacity: 0.1;
+  transition: opacity 0.2s;
+}
+
+.board div div[data-is-alive] {
+  opacity: 1;
+}
