@@ -2,8 +2,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: grid;
+  place-items: center;
   background-color: #fff;
+  font: 1rem/1 sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .board {
@@ -11,7 +24,6 @@ body {
   width: max-content;
   height: 100%;
   margin: 0 auto;
-  padding: 10px;
 }
 
 .board div {
@@ -33,10 +45,36 @@ body {
   opacity: 1;
 }
 
-button[disabled] {
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls > * {
+  flex: 1 1 0;
+}
+
+.buttons {
+  display: grid;
+  place-items: center;;
+}
+
+.buttons button {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 4px solid #fff9;
+  border-radius: 50%;
+  color: #fff9;
+  background-color: #355C7D;
+  cursor: pointer;
+}
+
+.buttons button[disabled] {
   display: none;
 }
 
-svg {
-  width: 30px;
+.buttons svg {
+  width: 20px;
 }

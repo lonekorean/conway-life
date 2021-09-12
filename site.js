@@ -5,6 +5,7 @@ const BOARD_ROWS_COUNT = 32;
 // elements
 const bodyEl = document.querySelector('body');
 const boardEl = document.getElementById('board');
+const iterationsEl = document.getElementById('iterations');
 const startEl = document.getElementById('start');
 const stopEl = document.getElementById('stop');
 
@@ -12,6 +13,7 @@ const stopEl = document.getElementById('stop');
 let board = [[]];
 let isDrawing = false;
 let isIterating = false;
+let iterationsCount = 0;
 
 function reset() {
   // init board state
@@ -106,6 +108,9 @@ function iterate() {
       setLife(x, y, nextBoard[x][y]);
     }
   }
+
+  iterationsCount++;
+  iterationsEl.textContent = iterationsCount;
 }
 
 async function startIterating() {
