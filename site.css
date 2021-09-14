@@ -2,13 +2,15 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
   height: 100%;
 }
 
 body {
   display: grid;
   place-items: center;
+  min-height: 100%;
+  margin: 0;
   background-color: #fff;
   font: 1rem/1 sans-serif;
 }
@@ -17,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
 }
 
 .board {
@@ -32,10 +35,10 @@ body {
 }
 
 .board div div {
-  width: 20px;
-  height: 20px;
-  margin: 1px;
-  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 3px;
   background-color: #FE4365;
   opacity: 0.1;
   transition: opacity 0.2s;
@@ -45,18 +48,13 @@ body {
   opacity: 1;
 }
 
+.board div div:not([data-is-alive]):hover {
+  opacity: 0.3;
+}
+
 .controls {
-  display: flex;
-  justify-content: space-between;
-}
-
-.controls > * {
-  flex: 1 1 0;
-}
-
-.buttons {
   display: grid;
-  place-items: center;;
+  grid-template-columns: 1fr max-content 1fr;
 }
 
 .buttons button {
@@ -77,4 +75,8 @@ body {
 
 .buttons svg {
   width: 20px;
+}
+
+.clear {
+  text-align: right;
 }

@@ -1,6 +1,6 @@
 // config
-const BOARD_COLUMNS_COUNT = 32;
-const BOARD_ROWS_COUNT = 32;
+const BOARD_COLUMNS_COUNT = 16;
+const BOARD_ROWS_COUNT = 16;
 
 // elements
 const bodyEl = document.querySelector('body');
@@ -158,14 +158,14 @@ stopEl.addEventListener('click', () => {
 
 // create life in this cell and start drawing
 boardEl.addEventListener('mousedown', (event) => {
-  setLifeFromElement(event.target, true);
+  setLifeFromElement(event.target, !event.shiftKey);
   isDrawing = true;
 });
 
 // create life in cells while drawing
 boardEl.addEventListener('mouseover', (event) => {
   if (isDrawing) {
-    setLifeFromElement(event.target, true);
+    setLifeFromElement(event.target, !event.shiftKey);
   }
 });
 
