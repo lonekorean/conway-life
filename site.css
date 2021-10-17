@@ -12,7 +12,7 @@ body {
   min-height: 100%;
   margin: 0;
   background-color: #fff;
-  font: 1rem/1 sans-serif;
+  font: 2rem/1 sans-serif;
 }
 
 .wrapper {
@@ -30,7 +30,6 @@ body {
   width: var(--boardLength);
   height: var(--boardLength);
   margin: 0 auto;
-  
 }
 
 .board > div {
@@ -56,9 +55,8 @@ body {
   opacity: 0.3;
 }
 
-.controls {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
+.buttons {
+  justify-content: center;
 }
 
 .buttons button {
@@ -66,6 +64,7 @@ body {
   place-items: center;
   width: 60px;
   height: 60px;
+  margin: 0 auto;
   border: 4px solid #fff9;
   border-radius: 50%;
   color: #fff9;
@@ -79,8 +78,4 @@ body {
 
 .buttons svg {
   width: 20px;
-}
-
-.clear {
-  text-align: right;
 }
