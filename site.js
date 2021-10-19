@@ -1,6 +1,7 @@
 // config
 const BOARD_COLUMNS_COUNT = 16;
 const BOARD_ROWS_COUNT = 16;
+const ITERATION_TIME = 200;
 
 // elements
 const bodyEl = document.querySelector('body');
@@ -122,7 +123,7 @@ async function startIterating() {
     iterate();
 
     // sleep
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise(resolve => setTimeout(resolve, ITERATION_TIME));
 
     if (!isIterating) {
       break;
@@ -179,4 +180,5 @@ boardEl.addEventListener('dragstart', (event) => {
   event.preventDefault();
 });
 
+// lets go!
 reset();
