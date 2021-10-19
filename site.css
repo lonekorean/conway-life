@@ -1,3 +1,9 @@
+:root {
+  --gapHeight: 5vmin;
+  --buttonHeight: max(10vmin, 40px);
+  --boardHeight: min(90vw, 90vh - var(--gapHeight) - var(--buttonHeight));
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -18,17 +24,13 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gapHeight);
 }
 
 .board {
-  --availableWidth: 90vw;
-  --availableHeight: calc(90vh - 60px - 10px);
-  --boardLength: min(var(--availableWidth), var(--availableHeight));
-
   display: flex;
-  width: var(--boardLength);
-  height: var(--boardLength);
+  height: var(--boardHeight);
+  aspect-ratio: 1;
   margin: 0 auto;
 }
 
@@ -38,7 +40,7 @@ body {
   flex: 1 1 0;
 }
 
-.board div div {
+.board > div div {
   flex: 1 1 0;
   border: 1px solid #fff;
   border-radius: 3px;
@@ -47,11 +49,11 @@ body {
   transition: opacity 0.2s;
 }
 
-.board div div[data-is-alive] {
+.board > div div[data-is-alive] {
   opacity: 1;
 }
 
-.board div div:not([data-is-alive]):hover {
+.board > div div:not([data-is-alive]):hover {
   opacity: 0.3;
 }
 
@@ -62,10 +64,10 @@ body {
 .buttons button {
   display: grid;
   place-items: center;
-  width: 60px;
-  height: 60px;
+  height: var(--buttonHeight);
+  aspect-ratio: 1;
   margin: 0 auto;
-  border: 4px solid #fff9;
+  border: 6px solid #fff9;
   border-radius: 50%;
   color: #fff9;
   background-color: #1693A7;
@@ -77,5 +79,9 @@ body {
 }
 
 .buttons svg {
-  width: 20px;
+  height: 60%;
+}
+
+.buttons #start svg {
+  transform: translateX(8%);
 }
