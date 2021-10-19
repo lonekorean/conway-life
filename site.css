@@ -1,5 +1,5 @@
 :root {
-  --gapHeight: 5vmin;
+  --gapHeight: 4vmin;
   --buttonHeight: max(10vmin, 40px);
   --boardHeight: min(90vw, 90vh - var(--gapHeight) - var(--buttonHeight));
 }
@@ -44,7 +44,7 @@ body {
   flex: 1 1 0;
   border: 1px solid #fff;
   border-radius: 3px;
-  background-color: #FF3D7F;
+  background-color: #ff3d7f;
   opacity: 0.1;
   transition: opacity 0.2s;
 }
@@ -57,31 +57,27 @@ body {
   opacity: 0.3;
 }
 
-.buttons {
-  justify-content: center;
-}
-
-.buttons button {
+button {
+  align-self: center;
   display: grid;
   place-items: center;
   height: var(--buttonHeight);
   aspect-ratio: 1;
-  margin: 0 auto;
   border: 6px solid #fff9;
   border-radius: 50%;
   color: #fff9;
-  background-color: #1693A7;
+  background-color: #1693a7;
   cursor: pointer;
 }
 
-.buttons button[disabled] {
+button[disabled] {
   display: none;
 }
 
-.buttons svg {
+button svg {
   height: 60%;
 }
 
-.buttons #start svg {
+button#start svg {
   transform: translateX(8%);
 }
